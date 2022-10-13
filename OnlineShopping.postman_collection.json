@@ -1,0 +1,510 @@
+{
+	"info": {
+		"_postman_id": "af1d0998-eca9-4e2b-8ed1-2ef2d06c617b",
+		"name": "OnlineShopping",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "user_service",
+			"item": [
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstname\": \"abde\",\r\n    \"lastname\": \"deba\",\r\n    \"username\": \"abde\",\r\n    \"password\": \"abde1234\",\r\n    \"contactNo\": \"1234567890\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8082/api/v1.0/Shopping/register",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"api",
+								"v1.0",
+								"Shopping",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"abde\",\r\n    \"password\": \"abde1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8082/api/v1.0/Shopping/login",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"api",
+								"v1.0",
+								"Shopping",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "validate",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhYmRlIiwiZXhwIjoxNjY1NTU0NzYzLCJpYXQiOjE2NjU1NTExNjN9.ezugE_knTxGvxpLpX3qzDIB1uXmS9NwEYxdI6LZS2W0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "username",
+								"value": "abde",
+								"type": "default",
+								"disabled": true
+							},
+							{
+								"key": "valid",
+								"value": "true",
+								"type": "default",
+								"disabled": true
+							},
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhYmRlIiwiZXhwIjoxNjY1NDc1Mzc3LCJpYXQiOjE2NjU0NzE3Nzd9.FfpwjiVYLQ59MBWl9M6f-5miGLFDBTzwpIyXSgkwDzM",
+								"type": "default",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "localhost:8082/api/v1.0/Shopping/validate",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"api",
+								"v1.0",
+								"Shopping",
+								"validate"
+							],
+							"query": [
+								{
+									"key": "username",
+									"value": "abde",
+									"disabled": true
+								},
+								{
+									"key": "valid",
+									"value": "true",
+									"disabled": true
+								},
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhYmRlIiwiZXhwIjoxNjY1NDc1Mzc3LCJpYXQiOjE2NjU0NzE3Nzd9.FfpwjiVYLQ59MBWl9M6f-5miGLFDBTzwpIyXSgkwDzM",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "forgot_pw",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"abde\",\r\n    \"password\": \"abde1111\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8082/api/v1.0/Shopping/:{username}/forgot",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"api",
+								"v1.0",
+								"Shopping",
+								":{username}",
+								"forgot"
+							],
+							"variable": [
+								{
+									"key": "{username}",
+									"value": "abde"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "admin_service",
+			"item": [
+				{
+					"name": "admin_login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"admin\",\r\n    \"password\": \"admin123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8082/api/v1.0/Shopping/adminlogin",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"api",
+								"v1.0",
+								"Shopping",
+								"adminlogin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "admin_validate",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTY2NTU1NTU1NywiaWF0IjoxNjY1NTUxOTU3fQ.FSnmubbrzQeh66De7eZgxj7NyjtS-gFOh0wX4sGeR4I",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8082/api/v1.0/Shopping/adminvalidate",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"api",
+								"v1.0",
+								"Shopping",
+								"adminvalidate"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "product_service",
+			"item": [
+				{
+					"name": "add_product",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTY2NTU1NTU1NywiaWF0IjoxNjY1NTUxOTU3fQ.FSnmubbrzQeh66De7eZgxj7NyjtS-gFOh0wX4sGeR4I",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"productName\" : \"Iphone13\",\r\n    \"productDescription\" : \"Iphone 13 256GB 16GB\",\r\n    \"price\" : 700000.00,\r\n    \"features\" : \"smartphone\",\r\n    \"productQuantity\" : 5\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8083/api/v1.0/Shopping/iphone13/add",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"api",
+								"v1.0",
+								"Shopping",
+								"iphone13",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get_all_products",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhYmRlIiwiZXhwIjoxNjY1NTYyNTY0LCJpYXQiOjE2NjU1NTg5NjR9.xdBfeRZ_9GeDl4ZdEkSSUILwJYP1NRKVmnPs9cr5w28",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8083/api/v1.0/Shopping/all",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"api",
+								"v1.0",
+								"Shopping",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get_product_by_name",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhYmRlIiwiZXhwIjoxNjY1NTYyNTY0LCJpYXQiOjE2NjU1NTg5NjR9.xdBfeRZ_9GeDl4ZdEkSSUILwJYP1NRKVmnPs9cr5w28",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8083/api/v1.0/Shopping/Iphone13",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"api",
+								"v1.0",
+								"Shopping",
+								"Iphone13"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update_ product_by_name",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTY2NTU2Mjk4MSwiaWF0IjoxNjY1NTU5MzgxfQ.sGghz5nTSfVI-tWzEgLC3d_6S4M2AKbmK40u-MOH5LE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"productName\": \"Iphone13\",\r\n        \"productDescription\": \"Iphone 13 - 256GB - Black\",\r\n        \"price\": 69999.0,\r\n        \"features\": \"12MP Rear and Front Camera\",\r\n        \"productQuantity\": 5    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8083/api/v1.0/Shopping/Iphone13/update/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"api",
+								"v1.0",
+								"Shopping",
+								"Iphone13",
+								"update",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete_product_by_name",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTY2NTU2NjUyMSwiaWF0IjoxNjY1NTYyOTIxfQ.1_eFfSWFFNmm1l2d8-twrOZxtHSnxWo9c-BkMNstz-A",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8083/api/v1.0/Shopping/Iphone00/delete/5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"api",
+								"v1.0",
+								"Shopping",
+								"Iphone00",
+								"delete",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "all_admin_products",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTY2NTY0NDcxMywiaWF0IjoxNjY1NjQxMTEzfQ.H5J1zHwYAe18CaZBvKCtO_CJXSvwilma-0FmdVpZCNs",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8083/api/v1.0/Shopping/adminall",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"api",
+								"v1.0",
+								"Shopping",
+								"adminall"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "search_by_admin",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTY2NTY1NDUwOSwiaWF0IjoxNjY1NjUwOTA5fQ.C3IGa5feCWaRE0H5og0STJcBwkDn5P8_pnu9mP-vJJU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8083/api/v1.0/Shopping/search/iphone00",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"api",
+								"v1.0",
+								"Shopping",
+								"search",
+								"iphone00"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
