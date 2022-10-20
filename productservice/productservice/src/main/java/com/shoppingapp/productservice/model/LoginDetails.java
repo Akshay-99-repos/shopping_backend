@@ -14,10 +14,10 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 public class LoginDetails {
-//    @Schema(description = "user name of the user",required = true,example="Gurukiran@gmail.com")
+//    @Schema(description = "user name of the user",required = true,example="user@gmail.com")
     @Pattern(regexp = "[a-zA-Z0-9@.]*$", message = "user name should contain only alphabets and digits")
     private String username;
-//    @Schema(description = "Password of the user",required = true,example="Gurukiran")
+//    @Schema(description = "Password of the user",required = true,example="Username")
     @NotBlank(message="Password should not be empty")
     @Size(min = 8, message = "minimum 8 Characters required")
     private String password;

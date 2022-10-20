@@ -24,11 +24,11 @@ import lombok.Setter;
 @NoArgsConstructor
 public class Userdata {
     @Column
-//    @Schema(description = "First name of the user",required = true,example="gundamaraju")
+//    @Schema(description = "First name of the user",required = true,example="firstname")
     @NotBlank(message="First name should not be empty")
     private String firstname;
     @Column
-//    @Schema(description = "Last name of the user",required = true,example="Gurukiran")
+//    @Schema(description = "Last name of the user",required = true,example="lastname")
     @NotBlank(message="Last name should not be empty")
     private String lastname;
     @Id
